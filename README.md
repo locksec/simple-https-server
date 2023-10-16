@@ -16,6 +16,7 @@ To run the server, execute the following command:
 ```bash
 python3 server.py -p 8443 -l 0.0.0.0 -c server.crt -k server.key -a ca.crt
 ```
+**Note**: If no listener IP is specified, it will default to 127.0.0.1.
 
 To test the server using curl, execute the following command:
 ``` bash
@@ -27,6 +28,7 @@ curl -k --cert client.crt --key client.key https://127.0.0.1:8443
 * `-c`, `--certfile`: The server certificate file. This is the public certificate that the server presents during the handshake.
 * `-k`, `--keyfile`: The server private key file. This private key corresponds to the public certificate specified in `--certfile`.
 * `-a`, `--cafile`: The CA certificate file for client verification. This is the CA that signed the client's certificate.
+* `-m`, `--mtls`: Enables mTLS, which will require the client to provide a valid certificate.
 
 ## Examples of Use Cases
 * Vault PKI Demo: You can use this server to demonstrate how Vault can issue certificates. Use the CA certificate from Vault as `ca.crt`, and Vault-issued certificates as `server.crt` and `server.key`.
