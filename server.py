@@ -1,7 +1,7 @@
 # Author: Ray Heffer
 # Website: https://www.rayheffer.com
 # Date Created: October 16, 2023
-# Description: Simple HTTPS Server with Optional mTLS
+# Description: Simple HTTPS Server with mTLS support
 
 import http.server
 import ssl

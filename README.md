@@ -13,10 +13,16 @@ A Python-based HTTPS server that supports Mutual TLS (mTLS). This simple server 
 
 ## Usage
 To run the server, execute the following command:
+
+**Simple HTTPS Server listening on 127.0.0.1:8443**
 ```bash
-python3 server.py -p 8443 -l 0.0.0.0 -c server.crt -k server.key -a ca.crt
+python3 server.py -p 8443 -c server.crt -k server.key -a ca.crt
 ```
-**Note**: If no listener IP is specified, it will default to 127.0.0.1.
+
+**Simple HTTPS Server listening on 0.0.0.0:8443 with mTLS enabled**
+```bash
+python3 server.py -p 8443 -l 0.0.0.0 -c server.crt -k server.key -a ca.crt -m
+```
 
 To test the server using curl, execute the following command:
 ``` bash
